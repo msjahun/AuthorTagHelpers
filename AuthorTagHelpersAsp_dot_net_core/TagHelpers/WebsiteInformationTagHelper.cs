@@ -17,10 +17,16 @@ namespace AuthorTagHelpersAsp_dot_net_core.TagHelpers
         {
 
             output.TagName = "section";
+            var nameList = "";
+            foreach (var item in Info.array)
+            {
+                nameList += $"<li>{item}</li>";
+
+            }
             output.Content.SetHtmlContent($@"<ul><li><strong>Version:</strong>{Info.Version}</li>
                                             <li><strong>Copyright Year: </strong> {Info.CopyrightYear}<li>
                                             <li><strong>Approved:</strong> {Info.Approved}</li>
-                                            <li><strong>Number of tags to show:</strong> {Info.TagsToShow}<li></ul>");
+                                            <li><strong>Number of tags to show:</strong> {Info.TagsToShow}<li>"+nameList+"</ul>");
             output.TagMode = TagMode.StartTagAndEndTag;
         }
     }
