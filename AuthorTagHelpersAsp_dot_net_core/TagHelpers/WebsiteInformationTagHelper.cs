@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace AuthorTagHelpersAsp_dot_net_core.TagHelpers
 {
+    [HtmlTargetElement("Website-Information")]
     public class WebsiteInformationTagHelper : TagHelper
     {
 
