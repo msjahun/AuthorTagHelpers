@@ -11,5 +11,6 @@ namespace AuthorTagHelpersAsp_dot_net_core.Models
         public int CopyrightYear { get; set; }
         public bool Approved { get; set; }
         public int TagsToShow { get; set; }
+        public List<string> array { get; set; }
     }
 }
