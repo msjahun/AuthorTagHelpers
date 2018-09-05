@@ -1,0 +1,58 @@
+﻿@using AuthorTagHelpersAsp_dot_net_core.Models
+@model LoginViewModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<form asp-action="Index" asp-controller="Register" method="post">
+    <div style="color:red;" asp-validation-summary="All"></div>
+
+
+    <input asp-for="ReturnUrl" type="hidden" value="@ViewData["ReturnUrl"]">
+
+
+    <div class="form-group has-feedback">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" type="text" class="form-control" placeholder="Email">
+        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+        <span style="color:red;" asp-validation-for="Email"></span>
+    </div>
+
+    <div class="form-group has-feedback">
+        <label asp-for="Password"></label>
+        <input asp-for="Password" type="password" class="form-control" placeholder="Password">
+        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+        <span style="color:red;" asp-validation-for="Password"></span>
+    </div>
+
+
+    <div class="form-group has-feedback">
+        <label asp-for="Password"></label>
+        <input asp-for="Password" type="password" class="form-control" placeholder="Password">
+        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+        <span style="color:red;" asp-validation-for="Password"></span>
+    </div>
+
+
+
+    <div class="row">
+        <div class="col-xs-8">
+            <div class="checkbox icheck">
+                <label>
+                    <input asp-for="RememberMe" type="checkbox">
+                    <label asp-for="RememberMe"></label>
+                </label>
+                <span asp-validation-for="RememberMe"></span>
+            </div>
+        </div>
+        <!-- /.col -->
+        <div class="col-xs-4">
+            @*@Html.ActionLink("Sign in", "Index", @"Admin/Dashboard", null, new { @class = "btn btn-default btn-flat" })*@
+            <input type="submit" class="btn btn-default btn-flat" value="Register" />
+        </div>
+        <!-- /.col -->
+    </div>
+</form>
+
